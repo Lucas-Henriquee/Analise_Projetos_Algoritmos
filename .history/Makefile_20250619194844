@@ -1,0 +1,65 @@
+# Compiler
+CXX := g++
+
+# Directories
+SRC_DIR := src
+LLM_DIR := llm_generated
+RES_DIR := results
+INC_DIR := include
+INPUT_DIR := input_data
+BUILD_DIR := build
+
+# Executable name
+TARGET := apa
+
+# Compiler flags
+CXXFLAGS := -std=c++17 -Wall -Wextra -I$(INC_DIR) -g
+
+# Source and header files
+SRCS := $(wildcard $(SRC_DIR)/*.cpp) main.cpp
+
+# Object files
+OBJS := $(patsubst %.cpp, $(BUILD_DIR)/%.o, $(notdir $(filter-out main.cpp, $(SRCS))))
+MAIN_OBJ := $(BUILD_DIR)/main.o
+
+# Build directory command
+MKDIR_CMD = @mkdir -p $(BUILD_DIR)
+
+# Default target
+.PHONY: all clean
+
+# Build everything
+all: $(TARGET)
+
+# Link object files into the final executable
+$(TARGET): $(OBJS) $(MAIN_OBJ)
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
+# Compile source files from src
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
+	$(MKDIR_CMD)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+# Compile source files from llm_generated
+$(BUILD_DIR)/%.o: $(LLM_DIR)/%.cpp
+	$(MKDIR_CMD)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+# Compile source files from results
+$(BUILD_DIR)/%.o: $(RES_DIR)/%.cpp
+	$(MKDIR_CMD)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+# Compile source files from input_data
+$(BUILD_DIR)/%.o: $(INPUT_DIR)/%.cpp
+	$(MKDIR_CMD)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+# Compile main.cpp separately
+$(MAIN_OBJ): main.cpp
+	$(MKDIR_CMD)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+# Clean build files and executable
+clean:
+	rm -rf $(BUILD_DIR) $(TARGET)
