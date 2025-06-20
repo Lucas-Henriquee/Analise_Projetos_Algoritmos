@@ -1,6 +1,6 @@
 #include "../include/defines.hpp"
 
-double polynomial_recursive(deque<double> terms, float x)
+double polynomial_recursive(deque<double> terms, double x)
 {
     if (terms.size() == 0)
         return 0.0f; // Base case: if degree exceeds the number of terms

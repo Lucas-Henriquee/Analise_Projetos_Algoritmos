@@ -17,5 +17,5 @@ void save_results_to_json(const vector<json> &fibonacci_results, const vector<js
 
     file << setw(4) << output << endl;
     file.close();
-    cout << "Results saved in: " << filename << endl;
+    cout << "\nResults saved in: " << filename << endl;
 }

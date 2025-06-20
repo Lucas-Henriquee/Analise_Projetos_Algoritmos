@@ -21,6 +21,8 @@ void performance_analysis()
 
     read_json_file("input_data/input.json", fibonacci_values, polynomial_values);
 
+    cout << "\n\t\tFibonacci analysis:" << endl;
+    cout << "----------------------------------------------------------" << endl;
     // Fibonacci performance analysis
     for (size_t fibonacci_value : fibonacci_values)
     {
@@ -36,31 +38,33 @@ void performance_analysis()
         fibo_entry["iterative"] = { {"result", result}, {"time", time} };
 
         // Call the recursive Fibonacci function
-        start = chrono::high_resolution_clock::now();
-        result = fibonacci_recursive(fibonacci_value);
-        end = chrono::high_resolution_clock::now();
-        time = chrono::duration<double>(end - start).count();
-        cout << "[Recursive] Fibonacci(" << fibonacci_value << ") = " << result << " in " << time << "s" << endl;
-        fibo_entry["recursive"] = { {"result", result}, {"time", time} };
-
-        start = chrono::high_resolution_clock::now();
+        // start = chrono::high_resolution_clock::now();
+        // result = fibonacci_recursive(fibonacci_value);
+        // end = chrono::high_resolution_clock::now();
+        // time = chrono::duration<double>(end - start).count();
+        // cout << "[Recursive] Fibonacci(" << fibonacci_value << ") = " << result << " in " << time << "s" << endl;
+        // fibo_entry["recursive"] = { {"result", result}, {"time", time} };
+        
+        // start = chrono::high_resolution_clock::now();
         // result = fibonacci_llm_generated(fibonacci_value);
-        cout << "Fibonacci LLM generated result for " << fibonacci_value << ": " << result << endl;
-        end = chrono::high_resolution_clock::now();
-        time = chrono::duration<double>(end - start).count();
-        cout << "[LLM] Fibonacci(" << fibonacci_value << ") = " << result << " in " << time << "s" << endl;
-        fibo_entry["llm"] = { {"result", result}, {"time", time} };
+        // cout << "Fibonacci LLM generated result for " << fibonacci_value << ": " << result << endl;
+        // end = chrono::high_resolution_clock::now();
+        // time = chrono::duration<double>(end - start).count();
+        // cout << "[LLM] Fibonacci(" << fibonacci_value << ") = " << result << " in " << time << "s" << endl;
+        // fibo_entry["llm"] = { {"result", result}, {"time", time} };
 
         // Save the results for Fibonacci
         fibonacci_results.push_back(fibo_entry);
+        cout << " " << endl;
     }
-
+        
+    cout << "\n\t\tPolynomial analysis:" << endl;
+    cout << "----------------------------------------------------------" << endl;
     // Polynomial performance analysis
     for (const auto &polynomial_entry : polynomial_values)
     {
         double x = polynomial_entry.first;
         deque<double> coefficients = polynomial_entry.second;
-        size_t max_degree = coefficients.size() - 1;
 
         json poly_entry;
         poly_entry["x"] = x;
@@ -68,7 +72,7 @@ void performance_analysis()
 
         // Call the iterative Polynomial function
         auto start = chrono::high_resolution_clock::now();
-        double result = polynomial_iterative(x, coefficients, max_degree);
+        double result = polynomial_iterative(x, coefficients);
         auto end = chrono::high_resolution_clock::now();
         double time = chrono::duration<double>(end - start).count();
         cout << "[Iterative] Polynomial(x = " << x << ") = " << result << " in " << time << "s" << endl;
@@ -83,16 +87,18 @@ void performance_analysis()
         poly_entry["recursive"] = { {"result", result}, {"time", time} };
 
         // Call the LLM generated Polynomial function
-        start = chrono::high_resolution_clock::now();
+        // start = chrono::high_resolution_clock::now();
         // result = polynomial_llm_generated(coefficients, x);
-        end = chrono::high_resolution_clock::now();
-        time = chrono::duration<double>(end - start).count();
-        cout << "[LLM] Polynomial(x = " << x << ") = " << result << " in " << time << "s" << endl;
-        poly_entry["llm"] = { {"result", result}, {"time", time} };
+        // end = chrono::high_resolution_clock::now();
+        // time = chrono::duration<double>(end - start).count();
+        // cout << "[LLM] Polynomial(x = " << x << ") = " << result << " in " << time << "s" << endl;
+        // poly_entry["llm"] = { {"result", result}, {"time", time} };
 
         // Save the results for Polynomial
         polynomial_results.push_back(poly_entry);
+        cout << " " << endl;
     }
 
     save_results_to_json(fibonacci_results, polynomial_results);
+    cout << "Performance analysis completed.\n "<< endl;
 }

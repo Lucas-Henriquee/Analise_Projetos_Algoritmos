@@ -36,7 +36,7 @@ void read_json_file(const string &filename, deque<size_t> &fibonacci_values, map
             double x = item["x"].get<double>();
             deque<double> values;
 
-            for (const auto &term : item["terms"])
+            for (const auto &term : item["coefficients"])
                 values.push_back(term.get<double>());
 
             polynomial_values[x] = values;

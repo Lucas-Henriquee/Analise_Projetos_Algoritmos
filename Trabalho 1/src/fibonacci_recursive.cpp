@@ -1,6 +1,6 @@
 #include "../include/defines.hpp"
 
-int fibonacci_recursive(int n)
+size_t fibonacci_recursive(int n)
 {
     if (n <= 1)
         return n;

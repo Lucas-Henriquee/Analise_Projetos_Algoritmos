@@ -1,6 +1,6 @@
 #include "../include/defines.hpp"
 
-int fibonacci_iterative(int n)
+size_t fibonacci_iterative(int n)
 {
 
     int a = 0, b = 1;
