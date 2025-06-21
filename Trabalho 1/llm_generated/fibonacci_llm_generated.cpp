@@ -21,6 +21,8 @@ unsigned long long fibonacciIterativo(int n) {
     return b;
 }
 
+//Analise de complexidade: 3(n-2)+2 ,O(n)  n= no de termos
+
 /*
 // Exemplo de uso:
 int main() {
@@ -50,3 +52,5 @@ int main() {
     return 0;
 }
 */
+
+//Analise de complexidade: (2^n)+1 ,O(2^n)  n= no de termos

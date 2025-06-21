@@ -19,6 +19,9 @@ double avaliarPolinomioIterativo(const vector<double>& coeficientes, double x) {
     return resultado;
 }
 
+// Analise de complexidade: 2n ,O(n)  n= no de coeficientes 
+
+
 /*
 // Exemplo de uso:
 int main() {
@@ -58,3 +61,5 @@ int main() {
     return 0;
 }
 */
+
+//Analise de complexidade:  ,O()  n= no de coeficientes 
