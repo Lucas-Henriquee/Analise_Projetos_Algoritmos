@@ -3,191 +3,191 @@
         {
             "iterative": {
                 "result": 5,
-                "time": 1.6e-07
+                "time": 1.11e-07
             },
             "llm - iterative": {
                 "result": 5,
-                "time": 6.9e-08
+                "time": 7.5e-08
             },
             "llm - recursive": {
                 "result": 5,
-                "time": 1.67e-07
+                "time": 1.57e-07
             },
             "n": 5,
             "recursive": {
                 "result": 5,
-                "time": 1.21e-07
+                "time": 1.22e-07
             }
         },
         {
             "iterative": {
                 "result": 55,
-                "time": 6.1e-08
+                "time": 5e-08
             },
             "llm - iterative": {
                 "result": 55,
-                "time": 6.4e-08
+                "time": 5e-08
             },
             "llm - recursive": {
                 "result": 55,
-                "time": 5.8e-07
+                "time": 5.06e-07
             },
             "n": 10,
             "recursive": {
                 "result": 55,
-                "time": 6.53e-07
+                "time": 4.16e-07
             }
         },
         {
             "iterative": {
                 "result": 610,
-                "time": 7.1e-08
+                "time": 5.2e-08
             },
             "llm - iterative": {
                 "result": 610,
-                "time": 9.5e-08
+                "time": 5.5e-08
             },
             "llm - recursive": {
                 "result": 610,
-                "time": 4.819e-06
+                "time": 3.946e-06
             },
             "n": 15,
             "recursive": {
                 "result": 610,
-                "time": 3.542e-06
+                "time": 3.634e-06
             }
         },
         {
             "iterative": {
                 "result": 6765,
-                "time": 9.2e-08
+                "time": 7.5e-08
             },
             "llm - iterative": {
                 "result": 6765,
-                "time": 8.5e-08
+                "time": 6.4e-08
             },
             "llm - recursive": {
                 "result": 6765,
-                "time": 5.2249e-05
+                "time": 4.2637e-05
             },
             "n": 20,
             "recursive": {
                 "result": 6765,
-                "time": 3.7663e-05
+                "time": 3.8603e-05
             }
         },
         {
             "iterative": {
                 "result": 75025,
-                "time": 1.03e-07
+                "time": 8.2e-08
             },
             "llm - iterative": {
                 "result": 75025,
-                "time": 9.5e-08
+                "time": 6.2e-08
             },
             "llm - recursive": {
                 "result": 75025,
-                "time": 0.000582127
+                "time": 0.000473723
             },
             "n": 25,
             "recursive": {
                 "result": 75025,
-                "time": 0.000414955
+                "time": 0.000404543
             }
         },
         {
             "iterative": {
                 "result": 832040,
-                "time": 1.14e-07
+                "time": 9.2e-08
             },
             "llm - iterative": {
                 "result": 832040,
-                "time": 1.29e-07
+                "time": 9.9e-08
             },
             "llm - recursive": {
                 "result": 832040,
-                "time": 0.005282176
+                "time": 0.005244807
             },
             "n": 30,
             "recursive": {
                 "result": 832040,
-                "time": 0.004867159
+                "time": 0.004640114
             }
         },
         {
             "iterative": {
                 "result": 9227465,
-                "time": 1.74e-07
+                "time": 1.36e-07
             },
             "llm - iterative": {
                 "result": 9227465,
-                "time": 2.3e-07
+                "time": 1e-07
             },
             "llm - recursive": {
                 "result": 9227465,
-                "time": 0.056018568
+                "time": 0.055043883
             },
             "n": 35,
             "recursive": {
                 "result": 9227465,
-                "time": 0.050714171
+                "time": 0.050233264
             }
         },
         {
             "iterative": {
                 "result": 102334155,
-                "time": 1.77e-07
+                "time": 1.38e-07
             },
             "llm - iterative": {
                 "result": 102334155,
-                "time": 2.59e-07
+                "time": 3.41e-07
             },
             "llm - recursive": {
                 "result": 102334155,
-                "time": 0.606552185
+                "time": 0.604698547
             },
             "n": 40,
             "recursive": {
                 "result": 102334155,
-                "time": 0.554277374
+                "time": 0.549252993
             }
         },
         {
             "iterative": {
                 "result": 1134903170,
-                "time": 3.23e-07
+                "time": 3.3e-07
             },
             "llm - iterative": {
                 "result": 1134903170,
-                "time": 3.31e-07
+                "time": 2.73e-07
             },
             "llm - recursive": {
                 "result": 1134903170,
-                "time": 6.75180523
+                "time": 6.712822976
             },
             "n": 45,
             "recursive": {
                 "result": 1134903170,
-                "time": 6.074915778
+                "time": 6.077293788
             }
         },
         {
             "iterative": {
                 "result": 12586269025,
-                "time": 2.14e-07
+                "time": 2.07e-07
             },
             "llm - iterative": {
                 "result": 12586269025,
-                "time": 3.29e-07
+                "time": 3.72e-07
             },
             "llm - recursive": {
                 "result": 12586269025,
-                "time": 74.466958635
+                "time": 75.653001992
             },
             "n": 50,
             "recursive": {
                 "result": 12586269025,
-                "time": 67.241085411
+                "time": 67.292009697
             }
         }
     ],
@@ -222,19 +222,19 @@
             ],
             "iterative": {
                 "result": -0.19537565468078055,
-                "time": 1.445e-06
+                "time": 1.805e-06
             },
             "llm - iterative": {
                 "result": -0.1953756546807807,
-                "time": 9.762e-06
+                "time": 1.0749e-05
             },
             "llm - recursive": {
                 "result": -0.1953756546807807,
-                "time": 7.56e-07
+                "time": 9.12e-07
             },
             "recursive": {
                 "result": -0.19537565468078055,
-                "time": 1.5636e-05
+                "time": 1.7327e-05
             },
             "x": 0.8
         },
@@ -278,19 +278,19 @@
             ],
             "iterative": {
                 "result": 17.45472310152848,
-                "time": 8.26e-07
+                "time": 9.65e-07
             },
             "llm - iterative": {
                 "result": 17.454723101528476,
-                "time": 1.148e-06
+                "time": 1.167e-06
             },
             "llm - recursive": {
                 "result": 17.454723101528476,
-                "time": 9.49e-07
+                "time": 1.011e-06
             },
             "recursive": {
                 "result": 17.45472310152848,
-                "time": 2.1228e-05
+                "time": 1.8065e-05
             },
             "x": 0.9
         },
@@ -349,19 +349,19 @@
             ],
             "iterative": {
                 "result": 0.4733615511401472,
-                "time": 9.58e-07
+                "time": 1.198e-06
             },
             "llm - iterative": {
                 "result": 0.47336155114014733,
-                "time": 1.422e-06
+                "time": 1.634e-06
             },
             "llm - recursive": {
                 "result": 0.47336155114014733,
-                "time": 1.322e-06
+                "time": 1.352e-06
             },
             "recursive": {
                 "result": 0.4733615511401472,
-                "time": 2.2697e-05
+                "time": 2.1094e-05
             },
             "x": 0.95
         },
@@ -415,19 +415,19 @@
             ],
             "iterative": {
                 "result": 135.0,
-                "time": 8.49e-07
+                "time": 9.71e-07
             },
             "llm - iterative": {
                 "result": 135.0,
-                "time": 9.95e-07
+                "time": 1.166e-06
             },
             "llm - recursive": {
                 "result": 135.0,
-                "time": 9.96e-07
+                "time": 1.152e-06
             },
             "recursive": {
                 "result": 135.0,
-                "time": 1.3433e-05
+                "time": 1.33e-05
             },
             "x": 1.0
         },
@@ -475,19 +475,19 @@
             ],
             "iterative": {
                 "result": 1189024492841.0054,
-                "time": 1.226e-06
+                "time": 7.73e-07
             },
             "llm - iterative": {
                 "result": 1189024492841.0059,
-                "time": 1.158e-06
+                "time": 1.094e-06
             },
             "llm - recursive": {
                 "result": 1189024492841.0059,
-                "time": 1.149e-06
+                "time": 1.108e-06
             },
             "recursive": {
                 "result": 1189024492841.0054,
-                "time": 1.1356e-05
+                "time": 1.4127e-05
             },
             "x": 1.05
         },
@@ -526,19 +526,19 @@
             ],
             "iterative": {
                 "result": 164.49402268886436,
-                "time": 7.51e-07
+                "time": 7.41e-07
             },
             "llm - iterative": {
                 "result": 164.49402268886436,
-                "time": 8.05e-07
+                "time": 1.025e-06
             },
             "llm - recursive": {
                 "result": 164.49402268886436,
-                "time": 8.23e-07
+                "time": 9.21e-07
             },
             "recursive": {
                 "result": 164.49402268886436,
-                "time": 8.846e-06
+                "time": 9.687e-06
             },
             "x": 1.1
         },
@@ -557,19 +557,19 @@
             ],
             "iterative": {
                 "result": -29.21692928,
-                "time": 5.26e-07
+                "time": 5.17e-07
             },
             "llm - iterative": {
                 "result": -29.216929279999988,
-                "time": 4.94e-07
+                "time": 5.46e-07
             },
             "llm - recursive": {
                 "result": -29.216929279999988,
-                "time": 3.2e-07
+                "time": 3.25e-07
             },
             "recursive": {
                 "result": -29.21692928,
-                "time": 4.133e-06
+                "time": 4.99e-06
             },
             "x": 1.2
         },
@@ -628,19 +628,19 @@
             ],
             "iterative": {
                 "result": 75795907.27571173,
-                "time": 9.74e-07
+                "time": 9.83e-07
             },
             "llm - iterative": {
                 "result": 75795907.2757117,
-                "time": 1.429e-06
+                "time": 1.416e-06
             },
             "llm - recursive": {
                 "result": 75795907.2757117,
-                "time": 1.333e-06
+                "time": 1.38e-06
             },
             "recursive": {
                 "result": 75795907.27571173,
-                "time": 1.8873e-05
+                "time": 2.0128e-05
             },
             "x": 1.3
         },
@@ -669,19 +669,19 @@
             ],
             "iterative": {
                 "result": 113064.72882270813,
-                "time": 6.84e-07
+                "time": 6.65e-07
             },
             "llm - iterative": {
                 "result": 113064.72882270813,
-                "time": 7.23e-07
+                "time": 6.22e-07
             },
             "llm - recursive": {
                 "result": 113064.72882270813,
-                "time": 5.74e-07
+                "time": 6.09e-07
             },
             "recursive": {
                 "result": 113064.72882270813,
-                "time": 7.533e-06
+                "time": 7.409e-06
             },
             "x": 1.5
         },
@@ -705,19 +705,19 @@
             ],
             "iterative": {
                 "result": 65534.0,
-                "time": 5.2e-07
+                "time": 8.86e-07
             },
             "llm - iterative": {
                 "result": 65534.0,
-                "time": 4.64e-07
+                "time": 5e-07
             },
             "llm - recursive": {
                 "result": 65534.0,
-                "time": 4.36e-07
+                "time": 4.8e-07
             },
             "recursive": {
                 "result": 65534.0,
-                "time": 5.172e-06
+                "time": 5.956e-06
             },
             "x": 2.0
         }
