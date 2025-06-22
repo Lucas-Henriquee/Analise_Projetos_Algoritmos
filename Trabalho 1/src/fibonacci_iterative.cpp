@@ -2,15 +2,17 @@
 
 size_t fibonacci_iterative(int n)
 {
+    if (n <= 1)
+        return n;
 
-    int a = 0, b = 1;
+    size_t a = 0, b = 1;
 
-    for (int i = 0; i < n; i++)
+    while (n > 1)
     {
-        int temp = a;
-        a = b;
-        b += temp;
+        b = a + b;
+        a = b - a;
+        --n;
     }
 
-    return a;
+    return b;
 }

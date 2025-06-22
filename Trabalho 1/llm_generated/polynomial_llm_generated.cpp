@@ -1,10 +1,6 @@
-#include <iostream>
-#include <vector>
-#include <cmath>
+#include "../include/defines.hpp"
 
-using namespace std;
-
-double avaliarPolinomioIterativo(const vector<double>& coeficientes, double x) {
+double avaliarPolinomioIterativo(const deque<double>& coeficientes, double x) {
     /**
      * Avalia um polinômio dado seus coeficientes e um valor x de forma iterativa.
      * 
@@ -32,7 +28,7 @@ int main() {
 }
 */
 
-double avaliarPolinomioRecursivo(const vector<double>& coeficientes, double x, int grau = -1) {
+double avaliarPolinomioRecursivo(const deque<double>& coeficientes, double x, int grau = -1) {
     /**
      * Avalia um polinômio dado seus coeficientes e um valor x de forma recursiva.
      * 

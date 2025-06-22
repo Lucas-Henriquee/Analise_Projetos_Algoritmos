@@ -8,6 +8,7 @@
 #include <string>   /* Manipulação de strings */
 #include <vector>   /* Manipulação de vetores */
 #include <chrono>   /* Manipulação de tempo */
+#include <cmath>    /* Funções matemáticas */
 
 #include "json.hpp" /* Biblioteca JSON para C++ */
 

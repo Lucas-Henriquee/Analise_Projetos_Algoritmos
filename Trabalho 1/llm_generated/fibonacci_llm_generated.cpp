@@ -1,6 +1,4 @@
-#include <iostream>
-
-using namespace std;
+#include "../include/defines.hpp"
 
 unsigned long long fibonacciIterativo(int n) {
     /**
