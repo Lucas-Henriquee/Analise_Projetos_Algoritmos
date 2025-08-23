@@ -1,0 +1,14 @@
+D
+6 6
+X
+Y
+Z
+W
+P
+Q
+X Y
+Y Z
+Z X
+W P
+P Q
+Q W
