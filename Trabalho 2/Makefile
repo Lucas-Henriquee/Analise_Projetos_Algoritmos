@@ -32,7 +32,7 @@ endif
 
 # Build and run everything
 all: $(TARGET)
-	chmod +x exec_all.sh
+	@chmod +x exec_all.sh
 
 # Link objects into executable
 $(TARGET): $(OBJS) $(MAIN_OBJ)
@@ -40,11 +40,11 @@ $(TARGET): $(OBJS) $(MAIN_OBJ)
 
 # Compile source files
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp $(DEPS)
-	$(MKDIR_CMD)
+	@$(MKDIR_CMD)
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(BUILD_DIR)/main.o: main.cpp $(DEPS)
-	$(MKDIR_CMD)
+	@$(MKDIR_CMD)
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Clean build artifacts

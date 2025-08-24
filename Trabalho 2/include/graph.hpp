@@ -3,21 +3,34 @@
 #include "edge.hpp"
 #include "vertex.hpp"
 
-class Graph {
-   private:
-    vector<Vertex> vertices;  // Mapa de vértices, onde a chave é o rótulo do vértice
-    size_t numEdges;            // Número de arestas no grafo
-    size_t numVertices;         // Número de vértices no grafo
-    bool directed;              // Indica se o grafo é direcionado ou não
+struct ResultadoAnalise {
+    bool isConnected;
+    long long duration_us;
+};
 
-   public:
+class Graph
+{
+private:
+    vector<Vertex> vertices; // Mapa de vértices, onde a chave é o rótulo do vértice
+    size_t numEdges;         // Número de arestas no grafo
+    size_t numVertices;      // Número de vértices no grafo
+    bool directed;           // Indica se o grafo é direcionado ou não
+
+public:
     // Construtor que inicializa o grafo a partir de um arquivo de entrada
     Graph(const string &filename);
 
     // Função para calcular o fecho transitivo do grafo
-    void verifica_conexo();
+    ResultadoAnalise verifica_conexo();
 
-   private:
+    // Função para a IA
+    ResultadoAnalise verifica_conexo_ai();
+
+    size_t getNumVertices() const { return numVertices; }
+    size_t getNumEdges() const { return numEdges; }
+    bool isDirected() const { return directed; }
+
+private:
     // Função auxiliar para realizar busca em profundidade (DFS)
     void dfs(const string &startLabel, const string &currentLabel, map<string, bool> &visited);
     void make_directed();
