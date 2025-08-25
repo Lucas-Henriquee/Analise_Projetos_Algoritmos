@@ -11,6 +11,7 @@
 #include <cmath>    /* Funções matemáticas */
 #include <sstream>  /* Manipulação de streams de strings */
 #include <algorithm>/* Algoritmos padrão */
+#include <stack>
 
 using namespace std;
 

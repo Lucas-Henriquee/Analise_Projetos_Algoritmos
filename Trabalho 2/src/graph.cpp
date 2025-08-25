@@ -250,16 +250,138 @@ ResultadoAnalise Graph::verifica_conexo()
     return {isConnected, duration};
 }
 
-ResultadoAnalise Graph::verifica_conexo_ai()
+ResultadoAnalise Graph::verifica_conexo_nao_direcionado_ai()
 {
 
     auto start = chrono::high_resolution_clock::now();
-    bool ai_isConnected = true;
+
+    // Considera o grafo como não direcionado para a verificação
+    bool estadoOriginalDirected = directed;
+
+    map<string, bool> visited;
+    for (size_t j = 0; j < vertices.size(); ++j)
+    {
+        visited[vertices[j].getLabel()] = false;
+    }
+
+    bool ai_isConnected = true; // Por convenção, grafo vazio é conexo
+
+    if (!vertices.empty())
+    {
+        if (directed)
+        {
+            make_non_directed();
+        }
+
+        const string &startLabel = vertices[0].getLabel();
+        dfs(startLabel, startLabel, visited);
+
+        for (map<string, bool>::iterator it = visited.begin(); it != visited.end(); ++it)
+        {
+            if (!it->second)
+            {
+                ai_isConnected = false;
+                break;
+            }
+        }
+    }
+
+    // Restaura o estado original de direcionamento
+    directed = estadoOriginalDirected;
 
     auto end = chrono::high_resolution_clock::now();
+    auto duration = chrono::duration_cast<chrono::microseconds>(end - start).count();
 
-    // Código do Pedro
+    return {ai_isConnected, duration};
+}
 
+ResultadoAnalise Graph::verifica_conexo_direcionado_ai()
+{
+    auto start = chrono::high_resolution_clock::now();
+
+    bool ai_isConnected = true; // Por convenção, grafo vazio é considerado fortemente conexo
+
+    if (!vertices.empty())
+    {
+        // 1) DFS normal a partir de um vértice arbitrário
+        map<string, bool> visited;
+        for (size_t j = 0; j < vertices.size(); ++j)
+        {
+            visited[vertices[j].getLabel()] = false;
+        }
+
+        const string &startLabel = vertices[0].getLabel();
+        dfs(startLabel, startLabel, visited);
+
+        for (map<string, bool>::iterator it = visited.begin(); it != visited.end(); ++it)
+        {
+            if (!it->second)
+            {
+                ai_isConnected = false;
+                break;
+            }
+        }
+
+        // 2) Se passou no primeiro, faz DFS no grafo transposto (arestas reversas)
+        if (ai_isConnected)
+        {
+            map<string, vector<string> > reverseAdj;
+            for (size_t i = 0; i < vertices.size(); ++i)
+            {
+                reverseAdj[vertices[i].getLabel()] = vector<string>();
+            }
+            for (size_t i = 0; i < vertices.size(); ++i)
+            {
+                const string &u = vertices[i].getLabel();
+                const vector<Edge> &edges = vertices[i].getEdges();
+                for (size_t k = 0; k < edges.size(); ++k)
+                {
+                    const string &v = edges[k].getDestination();
+                    reverseAdj[v].push_back(u);
+                }
+            }
+
+            for (map<string, bool>::iterator it = visited.begin(); it != visited.end(); ++it)
+            {
+                it->second = false;
+            }
+
+            // DFS iterativo usando pilha sobre o grafo transposto
+            stack<string> stackLabels;
+            stackLabels.push(startLabel);
+            while (!stackLabels.empty())
+            {
+                string u = stackLabels.top();
+                stackLabels.pop();
+
+                if (visited[u])
+                    continue;
+
+                visited[u] = true;
+
+                const vector<string> &preds = reverseAdj[u];
+                for (size_t i = 0; i < preds.size(); ++i)
+                {
+                    const string &p = preds[i];
+                    if (!visited[p])
+                    {
+                        stackLabels.push(p);
+                    }
+                }
+            }
+
+            for (map<string, bool>::iterator it = visited.begin(); it != visited.end(); ++it)
+            {
+                if (!it->second)
+                {
+                    ai_isConnected = false;
+                    break;
+                }
+            }
+        }
+    }
+
+    auto end = chrono::high_resolution_clock::now();
     auto duration = chrono::duration_cast<chrono::microseconds>(end - start).count();
 
     return {ai_isConnected, duration};
