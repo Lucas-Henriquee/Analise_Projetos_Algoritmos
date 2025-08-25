@@ -1,0 +1,15 @@
+ND
+5 8
+A
+B
+C
+D
+E
+A B
+A C
+B D
+C D
+D E
+B E
+C E
+E A

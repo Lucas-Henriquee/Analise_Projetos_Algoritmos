@@ -1,0 +1,9 @@
+ND
+4 3
+A
+B
+C
+D
+A B
+B C
+C D

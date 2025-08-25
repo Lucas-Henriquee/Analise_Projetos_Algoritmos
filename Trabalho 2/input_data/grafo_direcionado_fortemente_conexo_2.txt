@@ -1,0 +1,12 @@
+ND
+4 6
+A
+B
+C
+D
+A B
+B C
+C D
+D A
+A C
+B D
