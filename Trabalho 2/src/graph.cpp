@@ -160,9 +160,9 @@ void Graph::dfs(const string &startLabel, const string &currentLabel, map<string
     }
 }
 
-void Graph::make_directed()
+void Graph::make_non_directed()
 {
-    directed = true;
+    directed = false;
     // Adiciona arestas reversas para cada aresta existente
     vector<Edge> newEdges;
     for (size_t i = 0; i < vertices.size(); ++i)
@@ -223,9 +223,9 @@ ResultadoAnalise Graph::verifica_conexo()
     {
 
         Vertex originalVertex = vertices[0];
-        if (!directed)
+        if (directed)
         {
-            make_directed();
+            make_non_directed();
         }
 
         dfs(originalVertex.getLabel(), originalVertex.getLabel(), visited);

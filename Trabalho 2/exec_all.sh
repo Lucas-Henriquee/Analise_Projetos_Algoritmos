@@ -1,6 +1,7 @@
 #!/bin/bash
 
 INPUT_DIR="input_data"
+mkdir -p output
 OUTPUT_FILE="output/results.csv"
 EXECUTABLE="./apa"
 

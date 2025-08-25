@@ -33,5 +33,5 @@ public:
 private:
     // Função auxiliar para realizar busca em profundidade (DFS)
     void dfs(const string &startLabel, const string &currentLabel, map<string, bool> &visited);
-    void make_directed();
+    void make_non_directed();
 };
