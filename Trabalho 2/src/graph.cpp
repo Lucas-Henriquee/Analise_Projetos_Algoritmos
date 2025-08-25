@@ -382,7 +382,7 @@ ResultadoAnalise Graph::verifica_conexo_direcionado_ai()
     }
 
     auto end = chrono::high_resolution_clock::now();
-    auto duration = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    auto duration = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
 
     return {ai_isConnected, duration};
 }
