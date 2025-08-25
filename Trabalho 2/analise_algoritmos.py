@@ -62,7 +62,7 @@ def gerar_graficos(df):
     plt.xscale('log')
     plt.yscale('log')
     title = 'Comparativo de Performance' if is_comparative else 'Análise de Performance'
-    plt.title(f'{title}: Tamanho da Instância vs. Tempo de Execução', fontsize=16, pad=20)
+    plt.title(f'{title}: Tamanho da Instância vs. Tempo de Execução', fontsize=16, pad=20, fontweight="bold")
     plt.xlabel('Tamanho da Instância (V + E) - Escala Log', fontsize=12)
     plt.ylabel('Tempo de Execução (us) - Escala Log', fontsize=12)
     if is_comparative:
@@ -72,19 +72,23 @@ def gerar_graficos(df):
     plt.savefig(os.path.join(DIRETORIO_SAIDA, 'grafico_performance_dispersao.png'))
     plt.show()
 
+
+
     g = sns.catplot(
         data=df, x='Tipo', y='tempo_execucao_us',
         hue=hue_param, col='Conectividade',
         kind='bar', errorbar=None,
-        height=6, aspect=0.8,
+        height=8, aspect=1.1,
         palette='magma'
     )
-    g.fig.suptitle('Análise de Tempo Médio por Categoria', y=1.03, fontsize=16)
+    g.fig.suptitle('Análise de Tempo Médio por Categoria', fontsize=19, fontweight="bold")
     g.set_axis_labels("Tipo de Grafo", "Tempo Médio de Execução (us)")
     g.set_titles("Grafos do Tipo: {col_name}")
     
     if is_comparative:
-        g.legend.set_title("Versão")
+        legend_title = g.legend.get_title().get_text()
+        g.legend.remove()
+        g.axes.flat[-1].legend(loc='upper right', title=legend_title)
         
     plt.yscale('log')    
     plt.tight_layout(rect=[0, 0, 1, 0.97])
