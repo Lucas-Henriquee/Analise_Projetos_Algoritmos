@@ -16,7 +16,8 @@ int main(int argc, char *argv[])
     Graph g(arquivoEntrada);
 
     ResultadoAnalise resultado_manual = g.verifica_conexo();
-    ResultadoAnalise resultado_ia = g.verifica_conexo_ai();
+    ResultadoAnalise resultado_ia_direcionado = g.verifica_conexo_ai_direcionado();
+    ResultadoAnalise resultado_ia_nao_direcionado = g.verifica_conexo_ai_nao_direcionado();
 
 
     if (modo_csv)
@@ -47,9 +48,13 @@ int main(int argc, char *argv[])
         cout << "  - Status: " << (resultado_manual.isConnected ? "Conexo" : "Desconexo") << endl;
         cout << "  - Tempo: " << resultado_manual.duration_us << " us" << endl;
         
-        cout << "\nAlgoritmo da IA:" << endl;
-        cout << "  - Status: " << (resultado_ia.isConnected ? "Conexo" : "Desconexo") << endl;
-        cout << "  - Tempo: " << resultado_ia.duration_us << " us" << endl;
+        cout << "\nAlgoritmo da IA não Direcionado:" << endl;
+        cout << "  - Status: " << (resultado_ia_nao_direcionado.isConnected ? "Conexo" : "Desconexo") << endl;
+        cout << "  - Tempo: " << resultado_ia_nao_direcionado.duration_us << " us" << endl;
+
+        cout << "\nAlgoritmo da IA Direcionado:" << endl;
+        cout << "  - Status: " << (resultado_ia_direcionado.isConnected ? "Conexo" : "Desconexo") << endl;
+        cout << "  - Tempo: " << resultado_ia_direcionado.duration_us << " us" << endl;
     }
 
     return 0;

@@ -24,7 +24,7 @@ public:
     ResultadoAnalise verifica_conexo();
 
     // Função para a IA
-    ResultadoAnalise verifica_conexo_n_direcionado_ai();
+    ResultadoAnalise verifica_conexo_nao_direcionado_ai();
     ResultadoAnalise verifica_conexo_direcionado_ai();
 
     size_t getNumVertices() const { return numVertices; }
